@@ -1,0 +1,71 @@
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.icon-principles {
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.icon-principles article {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 250, 0.62);
+}
+
+.icon-principles p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.icon-grid article {
+  min-height: 176px;
+  padding: 22px;
+  display: grid;
+  align-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.icon-grid svg {
+  width: 44px;
+  height: 44px;
+  color: var(--moss);
+}
+
+.icon-grid span {
+  display: block;
+  margin-top: 24px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.icon-grid small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .icon-principles,
+  .icon-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,697 @@
+:root {
+  --page: var(--brand-paper);
+  --ink: var(--brand-charcoal-ink);
+  --moss: var(--brand-deep-moss);
+  --gold: var(--brand-soft-gold);
+  --copper: var(--brand-copper);
+  --line: #e3ddd3;
+  --muted: #77716b;
+  --white: #fffdfa;
+  --font-sans: "Gabriel Sans", "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  --font-typewriter: "Courier Prime", "Courier New", Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--page);
+  color: var(--ink);
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+}
+
+.page-bottom-link {
+  width: min(100% - 44px, 1080px);
+  margin: 64px auto 36px;
+  text-align: right;
+}
+
+.page-bottom-link a {
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  text-decoration-thickness: 0.08em;
+}
+
+.page-header,
+.creative-list {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.page-header {
+  padding: 48px 0 34px;
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-link img {
+  width: 38px;
+  height: 38px;
+}
+
+.brand-link:hover {
+  color: var(--moss);
+}
+
+.eyebrow {
+  margin: 28px 0 12px;
+  color: var(--moss);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 12ch;
+  margin-bottom: 24px;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 0.96;
+}
+
+.page-header > p:not(.eyebrow) {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.creative-list {
+  padding-bottom: 80px;
+}
+
+.creative-card {
+  padding: 44px 0;
+  border-top: 1px solid var(--line);
+}
+
+.creative-meta {
+  margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) minmax(220px, 360px);
+  gap: 24px;
+  align-items: end;
+}
+
+.creative-meta .eyebrow {
+  margin: 0;
+}
+
+.creative-meta h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.creative-meta span {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.artboard {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 18px 50px rgba(63, 58, 55, 0.08);
+}
+
+.artboard::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  z-index: -1;
+  border: 1px solid rgba(63, 58, 55, 0.16);
+  pointer-events: none;
+}
+
+.wide {
+  aspect-ratio: 4 / 1;
+}
+
+.square {
+  width: min(620px, 100%);
+  aspect-ratio: 1;
+}
+
+.youtube {
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+}
+
+.gumroad {
+  aspect-ratio: 2 / 1;
+  background: var(--moss);
+}
+
+.brand-block {
+  position: absolute;
+  inset: 12% 34% 12% 7%;
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 42px);
+}
+
+.mark {
+  width: clamp(74px, 10vw, 138px);
+  height: clamp(74px, 10vw, 138px);
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.platform-note {
+  margin-bottom: 12px;
+  color: inherit;
+  font-family: var(--font-typewriter);
+  font-size: clamp(0.76rem, 1.2vw, 0.98rem);
+}
+
+.artboard h3 {
+  margin-bottom: 12px;
+  font-size: clamp(2.6rem, 6vw, 5.8rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 0.92;
+}
+
+.artboard p {
+  max-width: 38ch;
+  margin-bottom: 0;
+  color: inherit;
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+}
+
+.right-illustration {
+  position: absolute;
+  right: 3%;
+  bottom: 0;
+  width: min(32%, 360px);
+  max-height: 94%;
+  object-fit: contain;
+  object-position: right bottom;
+  mix-blend-mode: multiply;
+}
+
+.right-illustration.landscape {
+  width: min(39%, 520px);
+  bottom: 6%;
+}
+
+.right-illustration.object {
+  width: min(28%, 340px);
+}
+
+.right-illustration.hibiscus {
+  width: min(28%, 330px);
+}
+
+.substack {
+  color: var(--ink);
+}
+
+.substack .right-illustration {
+  right: 5%;
+}
+
+.coffee {
+  background: var(--gold);
+  color: var(--page);
+}
+
+.coffee::after {
+  border-color: rgba(248, 246, 242, 0.24);
+}
+
+.patreon {
+  background: var(--ink);
+  color: var(--page);
+}
+
+.patreon::after,
+.gumroad::after {
+  border-color: rgba(248, 246, 242, 0.22);
+}
+
+.etsy {
+  background: #fbf8ef;
+  color: var(--ink);
+}
+
+.gumroad {
+  color: var(--page);
+}
+
+.youtube-safe {
+  position: absolute;
+  left: 19.6%;
+  right: 19.6%;
+  top: 35%;
+  bottom: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 38px);
+  color: var(--page);
+  text-align: left;
+}
+
+.youtube .right-illustration {
+  right: 6%;
+  opacity: 0.82;
+  mix-blend-mode: normal;
+}
+
+.instagram {
+  padding: clamp(36px, 8vw, 68px);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.instagram::after {
+  inset: 20px;
+}
+
+.large-mark {
+  width: min(34%, 180px);
+  height: auto;
+  margin-bottom: 26px;
+}
+
+.instagram h3 {
+  max-width: 8ch;
+  margin-bottom: 18px;
+}
+
+.instagram p {
+  max-width: 24ch;
+  color: var(--muted);
+}
+
+.corner-illustration {
+  position: absolute;
+  right: -3%;
+  bottom: -3%;
+  width: 31%;
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+}
+
+.avatar-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.avatar-ink,
+.avatar-colour {
+  display: grid;
+  place-items: center;
+}
+
+.avatar-ink::after,
+.avatar-colour::after {
+  display: none;
+}
+
+.avatar-ink {
+  background: var(--ink);
+}
+
+.avatar-colour {
+  background: #000;
+}
+
+.avatar-ink img,
+.avatar-colour img {
+  width: 142%;
+  max-width: none;
+}
+
+@media (max-width: 800px) {
+  .creative-meta {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .brand-block,
+  .youtube-safe {
+    inset: 12% 10%;
+  }
+
+  .right-illustration {
+    opacity: 0.2;
+    width: 42%;
+  }
+
+  .artboard h3 {
+    font-size: clamp(2rem, 10vw, 3.4rem);
+  }
+}
+
+/* Unified Paper-background creative direction */
+.artboard,
+.youtube,
+.coffee,
+.patreon,
+.etsy,
+.gumroad,
+.instagram {
+  background: var(--page);
+  color: var(--ink);
+}
+
+.artboard::after {
+  border-color: rgba(63, 58, 55, 0.16);
+}
+
+.brand-block {
+  inset: 12% 44% 12% 7%;
+  gap: clamp(20px, 3.2vw, 46px);
+}
+
+.youtube-safe {
+  left: 18%;
+  right: 34%;
+  top: 27%;
+  bottom: 27%;
+  justify-content: flex-start;
+  color: var(--ink);
+}
+
+.wordmark {
+  margin-bottom: clamp(12px, 1.6vw, 22px);
+  color: var(--moss);
+  font-family: var(--font-sans);
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.wordmark span,
+.wordmark small {
+  display: block;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.wordmark span {
+  font-size: clamp(3rem, 7vw, 8rem);
+}
+
+.wordmark small {
+  margin-top: 0.08em;
+  padding-left: 0.36em;
+  font-size: clamp(1.55rem, 3.4vw, 4rem);
+  font-weight: 500;
+  line-height: 0.8;
+}
+
+.artboard p {
+  max-width: 34ch;
+  color: var(--ink);
+}
+
+.right-illustration,
+.right-illustration.hibiscus {
+  right: 5.5%;
+  bottom: 4%;
+  width: min(25%, 300px);
+  max-height: 88%;
+  mix-blend-mode: normal;
+}
+
+.youtube .right-illustration,
+.gumroad .right-illustration {
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+.instagram .wordmark {
+  margin-bottom: 18px;
+}
+
+.instagram .wordmark span {
+  font-size: clamp(3rem, 11vw, 5.4rem);
+}
+
+.instagram .wordmark small {
+  font-size: clamp(1.5rem, 5vw, 2.7rem);
+}
+
+.corner-illustration {
+  width: 36%;
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+@media (max-width: 800px) {
+  .brand-block,
+  .youtube-safe {
+    inset: 12% 12%;
+  }
+
+  .right-illustration,
+  .right-illustration.hibiscus {
+    width: 34%;
+    opacity: 0.18;
+  }
+}
+
+/* Fit the complete wordmark cleanly inside each platform safe area. */
+.brand-block,
+.youtube-safe {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  justify-items: start;
+  gap: clamp(10px, 1.8vw, 18px);
+}
+
+.brand-block {
+  inset: 10% 42% 10% 8%;
+}
+
+.youtube-safe {
+  left: 18%;
+  right: 36%;
+  top: 20%;
+  bottom: 20%;
+}
+
+.mark {
+  width: clamp(58px, 7vw, 108px);
+  height: clamp(58px, 7vw, 108px);
+}
+
+.wordmark {
+  width: min(100%, 620px);
+  margin-bottom: clamp(10px, 1.3vw, 16px);
+}
+
+.wordmark span {
+  font-size: clamp(2.1rem, 5vw, 5.6rem);
+  line-height: 0.82;
+}
+
+.wordmark small {
+  padding-left: 0;
+  font-size: clamp(1.08rem, 2.4vw, 2.75rem);
+}
+
+.artboard p {
+  max-width: 31ch;
+  font-size: clamp(0.88rem, 1.25vw, 1.08rem);
+  line-height: 1.35;
+}
+
+.right-illustration,
+.right-illustration.hibiscus {
+  right: 5%;
+  width: min(23%, 270px);
+}
+
+.instagram .wordmark span {
+  font-size: clamp(2.2rem, 8vw, 4.5rem);
+}
+
+.instagram .wordmark small {
+  font-size: clamp(1.1rem, 3.8vw, 2.25rem);
+}
+
+/* Avatar tile overrides: keep real PNG logo assets visible. */
+.avatar-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.avatar-pair .artboard {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.avatar-pair .artboard::after {
+  display: none;
+}
+
+.avatar-colour {
+  background: var(--page);
+}
+
+.avatar-ink {
+  background: var(--page);
+}
+
+.avatar-colour img,
+.avatar-ink img {
+  width: 142%;
+  max-width: none;
+}
+
+.avatar-illustrated {
+  position: relative;
+}
+
+.avatar-illustrated .avatar-illustration {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 68%;
+  max-width: none;
+  opacity: 0.18;
+  transform: translate(-50%, -50%);
+}
+
+.avatar-illustrated .avatar-logo {
+  position: relative;
+  z-index: 1;
+  width: 126%;
+  max-width: none;
+}
+
+/* Platform layout refinement: the logo mark acts as the eyebrow above the title. */
+.brand-block,
+.youtube-safe {
+  grid-template-columns: 1fr;
+  align-content: center;
+  justify-items: start;
+  gap: clamp(5px, 0.8vw, 10px);
+  text-align: left;
+}
+
+.brand-eyebrow {
+  width: clamp(82px, 8.8vw, 120px);
+  height: clamp(82px, 8.8vw, 120px);
+  margin: 0 0 clamp(4px, 0.5vw, 7px);
+  object-fit: contain;
+}
+
+.brand-copy {
+  min-width: 0;
+}
+
+.brand-copy .wordmark,
+.instagram .wordmark {
+  margin-bottom: clamp(10px, 1.2vw, 16px);
+}
+
+.instagram .brand-eyebrow {
+  width: clamp(104px, 28vw, 172px);
+  height: clamp(104px, 28vw, 172px);
+  margin-bottom: clamp(10px, 2vw, 16px);
+}
+
+.instagram {
+  align-content: center;
+  justify-items: start;
+  row-gap: 0;
+  text-align: left;
+}
+
+.instagram p {
+  max-width: 31ch;
+}
+
+.brand-copy .wordmark span {
+  font-size: clamp(1.9rem, 4.4vw, 4.8rem);
+}
+
+.brand-copy .wordmark small {
+  font-size: clamp(0.98rem, 2.1vw, 2.35rem);
+}
+
+.brand-copy p {
+  font-size: clamp(0.82rem, 1.1vw, 0.98rem);
+  line-height: 1.28;
+}
+
+/* Final platform composition: large cropped PNG mark, left-aligned stack. */
+.brand-block {
+  inset: 8% 42% 8% 7%;
+}
+
+.youtube-safe {
+  left: 18%;
+  right: 36%;
+  top: 13%;
+  bottom: 13%;
+}
+
+.brand-eyebrow {
+  width: clamp(22px, 2.625vw, 41px);
+  height: auto;
+  margin-bottom: clamp(4px, 0.6vw, 8px);
+}
+
+.brand-copy .wordmark span {
+  font-size: clamp(2.05rem, 4.55vw, 5rem);
+}
+
+.brand-copy .wordmark small {
+  padding-left: 0;
+  font-size: clamp(1.05rem, 2.15vw, 2.45rem);
+}
+
+.brand-copy p {
+  max-width: 34ch;
+  font-size: clamp(0.88rem, 1.12vw, 1.02rem);
+}
+
+.instagram .brand-eyebrow {
+  width: clamp(22px, 6.75vw, 41px);
+  height: auto;
+}
